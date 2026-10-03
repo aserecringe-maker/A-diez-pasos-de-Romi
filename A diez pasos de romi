@@ -1,0 +1,253 @@
+```html
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A diez pasos de Romi - Película Oficial</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cinematic: {
+                            900: '#0a0a0a',
+                            950: '#050505',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts for cinematic typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #f3f4f6;
+        }
+        .cinzel-font {
+            font-family: 'Cinzel', serif;
+        }
+        /* Cinematic film grain and vignette effect */
+        .vignette {
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
+        }
+        .film-border {
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen flex flex-col justify-between selection:bg-red-600 selection:text-white">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-neutral-800/50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></span>
+                <span class="cinzel-font font-bold tracking-widest text-lg sm:text-xl text-neutral-100">DIEZ PASOS DE ROMI</span>
+            </div>
+            <nav class="hidden sm:flex space-x-6 text-sm text-neutral-400">
+                <a href="#historia" class="hover:text-white transition">Historia</a>
+                <a href="#personajes" class="hover:text-white transition">Elenco</a>
+                <a href="#votacion" class="hover:text-white transition text-red-500 font-medium">Votación</a>
+            </nav>
+            <button onclick="scrollToVote()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wider transition shadow-lg shadow-red-900/30">
+                Votar Pareja
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-24 pb-16">
+        <section class="max-w-6xl mx-auto px-4 py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-block bg-red-950/60 border border-red-800/40 text-red-400 text-xs px-3 py-1 rounded-full uppercase tracking-widest font-semibold">
+                    Un drama romántico y caótico
+                </div>
+                <h1 class="cinzel-font text-4xl sm:text-6xl font-black tracking-tight leading-none text-neutral-100">
+                    A DIEZ PASOS <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-500 to-neutral-200">DE ROMI</span>
+                </h1>
+                <p class="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    El amor verdadero es un campo de batalla. Entre miradas cruzadas, tentaciones y un ejército de randoms intentando sabotear cada segundo, Vladito y Romi luchan por mantener viva la chispa. ¿Sobrevivirá su historia al destino?
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#votacion" class="bg-neutral-100 hover:bg-white text-black px-8 py-3.5 rounded-xl font-bold transition shadow-xl text-center">
+                        Participar en la Votación
+                    </a>
+                    <a href="#historia" class="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 px-8 py-3.5 rounded-xl font-medium transition text-center">
+                        Conocer la Trama
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cropped/Cinematic random movie frame -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm rounded-2xl overflow-hidden film-border bg-neutral-900 vignette group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80"></div>
+                    <!-- Random cropped movie photo simulation -->
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" alt="Cinematic Film Scene" class="w-full h-96 object-cover object-center grayscale group-hover:grayscale-0 transition duration-700 scale-105 group-hover:scale-100">
+                    <div class="absolute bottom-4 left-4 right-4 z-20 space-y-1">
+                        <span class="text-xs text-red-500 font-bold uppercase tracking-widest">Escena 14 - Toma 3</span>
+                        <h3 class="cinzel-font text-lg font-bold text-white">Vladito & Romi: La Distancia</h3>
+                        <p class="text-xs text-neutral-400">"Cada paso hacia ti duele, pero retroceder es perderte."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="historia" class="max-w-4xl mx-auto px-4 py-16 border-t border-neutral-900">
+            <div class="text-center space-y-4 mb-12">
+                <h2 class="cinzel-font text-2xl sm:text-3xl font-bold tracking-wide">SINOPSIS OFICIAL</h2>
+                <div class="w-16 h-1 bg-red-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="bg-neutral-900/60 border border-neutral-800/60 rounded-2xl p-6 sm:p-10 space-y-6 text-neutral-300 leading-relaxed shadow-2xl">
+                <p class="text-lg italic text-neutral-200">
+                    "Dicen que el amor lo puede todo, pero no conocían a los randoms de la cuadra ni a los pretendientes perdidos que querían dinamitar la relación."
+                </p>
+                <p>
+                    En el corazón de la ciudad negra y nocturna, <strong class="text-white">Vladito</strong> y <strong class="text-white">Romi</strong> compartían un vínculo inquebrantable. Sin embargo, diez pasos los separaban físicamente todos los días, y diez mil obstáculos mentales ideados por un grupo de sujetos aleatorios (los clásicos "randoms") que no soportaban verlos felices.
+                </p>
+                <p>
+                    Desde mensajes falsos enviados por equivocación, chismes de pasillo inventados por NPCs urbanos, hasta apariciones inoportunas de exnovios fantasmas; todos querían <span class="text-red-500 font-semibold">matar la relación</span>. Cada escena es una prueba de fuego donde Vladito debe demostrar que su lealtad por Romi es a prueba de balas, mientras los randoms acechan en cada esquina esperando el menor descuido para robarle el protagonismo a la pareja principal.
+                </p>
+            </div>
+        </section>
+
+        <section id="personajes" class="max-w-6xl mx-auto px-4 py-16">
+            <div class="text-center space-y-4 mb-12">
+                <h2 class="cinzel-font text-2xl sm:text-3xl font-bold tracking-wide">REPARTO PRINCIPAL Y VILLANOS</h2>
+                <p class="text-neutral-400 text-sm">Los protagonistas y los saboteadores que buscan el caos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Character 1 -->
+                <div class="bg-neutral-900/40 border border-neutral-800 rounded-xl p-5 text-center space-y-3 hover:border-red-600/50 transition">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" alt="Romi" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="cinzel-font font-bold text-lg text-white">Romi</h3>
+                    <span class="text-xs bg-neutral-800 text-rose-400 px-2 py-0.5 rounded">La Protagonista</span>
+                    <p class="text-xs text-neutral-400">El centro de todas las miradas y la razón por la cual todos compiten.</p>
+                </div>
+                <!-- Character 2 -->
+                <div class="bg-neutral-900/40 border border-neutral-800 rounded-xl p-5 text-center space-y-3 hover:border-red-600/50 transition">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" alt="Vladito" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="cinzel-font font-bold text-lg text-white">Vladito</h3>
+                    <span class="text-xs bg-neutral-800 text-red-400 px-2 py-0.5 rounded">El Incondicional</span>
+                    <p class="text-xs text-neutral-400">Dispuesto a enfrentar a cualquier random con tal de llegar a esos diez pasos.</p>
+                </div>
+                <!-- Character 3 -->
+                <div class="bg-neutral-900/40 border border-neutral-800 rounded-xl p-5 text-center space-y-3 hover:border-red-600/50 transition">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop" alt="Random Saboteador" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="cinzel-font font-bold text-lg text-white">El Random #1</h3>
+                    <span class="text-xs bg-neutral-800 text-amber-500 px-2 py-0.5 rounded">Saboteador</span>
+                    <p class="text-xs text-neutral-400">Intenta ligar con Romi diciendo que "el horóscopo no es compatible con Vladito".</p>
+                </div>
+                <!-- Character 4 -->
+                <div class="bg-neutral-900/40 border border-neutral-800 rounded-xl p-5 text-center space-y-3 hover:border-red-600/50 transition">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-neutral-800 overflow-hidden border border-neutral-700">
+                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=400&auto=format&fit=crop" alt="NPC Misterioso" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="cinzel-font font-bold text-lg text-white">Cualquier Random</h3>
+                    <span class="text-xs bg-neutral-800 text-amber-500 px-2 py-0.5 rounded">Amenaza Externa</span>
+                    <p class="text-xs text-neutral-400">Aparece de la nada con flores baratas buscando arruinar el clímax.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="votacion" class="max-w-4xl mx-auto px-4 py-16 border-t border-neutral-900">
+            <div class="text-center space-y-4 mb-10">
+                <span class="text-red-500 text-xs font-bold uppercase tracking-widest">Encuesta de Audiencia</span>
+                <h2 class="cinzel-font text-3xl font-bold tracking-wide">SISTEMA DE VOTACIÓN DE PAREJAS</h2>
+                <p class="text-neutral-400 text-sm max-w-lg mx-auto">
+                    El destino de la película está en tus manos. ¿Quién debería quedarse con Romi al final de la historia?
+                </p>
+            </div>
+
+            <!-- Vote Box Container -->
+            <div class="bg-neutral-900/80 border border-neutral-800 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <!-- Toast Message Box (Custom alert replacement) -->
+                <div id="toast" class="hidden mb-6 p-4 rounded-xl bg-red-950/80 border border-red-600/50 text-red-200 text-sm text-center font-medium animate-fade-in">
+                    ¡Voto registrado con éxito! La tensión dramática aumenta...
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <!-- Option 1: Romi & Vladito -->
+                    <div onclick="vote('vladito')" class="cursor-pointer group bg-black/60 border-2 border-neutral-800 hover:border-red-600 rounded-xl p-6 transition flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold uppercase tracking-wider text-red-500">Pareja Oficial</span>
+                                <span id="count-vladito" class="text-sm font-bold text-neutral-300">0 votos</span>
+                            </div>
+                            <h3 class="cinzel-font text-xl font-bold text-white group-hover:text-red-500 transition">Romi & Vladito</h3>
+                            <p class="text-xs text-neutral-400">El amor verdadero contra los diez pasos y contra todos los randoms del mundo.</p>
+                        </div>
+                        <div>
+                            <div class="w-full bg-neutral-800 h-2 rounded-full overflow-hidden mb-4">
+                                <div id="bar-vladito" class="bg-red-600 h-full transition-all duration-500" style="width: 50%;"></div>
+                            </div>
+                            <button class="w-full bg-red-600 hover:bg-red-700 text-white py-2.5 rounded-lg text-sm font-semibold transition">
+                                Votar por Vladito
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Option 2: Romi & Random -->
+                    <div onclick="vote('random')" class="cursor-pointer group bg-black/60 border-2 border-neutral-800 hover:border-amber-500 rounded-xl p-6 transition flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-500">El Giro del Caos</span>
+                                <span id="count-random" class="text-sm font-bold text-neutral-300">0 votos</span>
+                            </div>
+                            <h3 class="cinzel-font text-xl font-bold text-white group-hover:text-amber-500 transition">Romi & Cualquier Random</h3>
+                            <p class="text-xs text-neutral-400">El desastre total. Un plot twist donde gana el sujeto equívoco de la esquina.</p>
+                        </div>
+                        <div>
+                            <div class="w-full bg-neutral-800 h-2 rounded-full overflow-hidden mb-4">
+                                <div id="bar-random" class="bg-amber-500 h-full transition-all duration-500" style="width: 50%;"></div>
+                            </div>
+                            <button class="w-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-neutral-200 py-2.5 rounded-lg text-sm font-semibold transition">
+                                Votar por el Random
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center text-xs text-neutral-500 flex items-center justify-center space-x-2">
+                    <svg class="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>El sistema de votación es en tiempo real y guarda tu preferencia de forma local.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-10">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-neutral-500 text-xs space-y-4 sm:space-y-0">
+            <p>&copy; 2026 Producciones "A diez pasos de Romi". Todos los derechos reservados.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-neutral-400 transition">Términos</a>
+                <a href="#" class="hover:text-neutral-400 transition">Privacidad</a>
+                <a href="#" class="hover:text-neutral-400 transition">Prensa</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize or load vote counts from localStorage
+        let votes = JSON.parse(localStorage.getItem('romi_movie_votes')) || {
+            vladito: 0,
+            random: 0
+        };
+
+        function updateUI() {
+// ... existing code ... -->
+```
